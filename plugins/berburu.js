@@ -1,112 +1,102 @@
-let fetch = require('node-fetch')
 let { MessageType } = require('@adiwajshing/baileys')
-let handler = async (m, { conn }) => {
-    let __timers = (new Date - global.db.data.users[m.sender].as)
-    let _timers = (500000 - __timers)
-    let timers = clockString(_timers) 
-    let user = global.db.data.users[m.sender]
-    let buttons = [
-{buttonId: '.kandang', buttonText: {displayText: 'KANDANG'}, type: 1}, 
-]
-const buttonMessage = {
-    contentText: `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat dulu sekitar ${timers}*\n*Untuk bisa melanjutkan berburu*\n`,
-    footerText: watermark, 
-    buttons: buttons,
-    headerType: 1
-}
-    if (new Date - global.db.data.users[m.sender].as > 500000) {
-let randomaku1 = `${Math.floor(Math.random() * 5)}`
-let randomaku2 = `${Math.floor(Math.random() * 5)}`
-let randomaku4 = `${Math.floor(Math.random() * 5)}`
-let randomaku3 = `${Math.floor(Math.random() * 5)}`
-let randomaku5 = `${Math.floor(Math.random() * 5)}`
-let randomaku6 = `${Math.floor(Math.random() * 5)}`
-let randomaku7 = `${Math.floor(Math.random() * 5)}`
-let randomaku8 = `${Math.floor(Math.random() * 5)}`
-let randomaku9 = `${Math.floor(Math.random() *  5)}`
-let randomaku10 = `${Math.floor(Math.random() * 5)}`
-let randomaku11 = `${Math.floor(Math.random() * 5)}`
-let randomaku12 = `${Math.floor(Math.random() * 5)}`
-.trim()
 
-let rbrb1 = (randomaku1 * 1)
-let rbrb2 = (randomaku2 * 1) 
-let rbrb3 = (randomaku3 * 1)
-let rbrb4 = (randomaku4 * 1)
-let rbrb5 = (randomaku5 * 1)
-let rbrb6 = (randomaku6 * 1)
-let rbrb7 = (randomaku7 * 1)
-let rbrb8 = (randomaku8 * 1)
-let rbrb9 = (randomaku9 * 1)
-let rbrb10 = (randomaku10 * 1)
-let rbrb11 = (randomaku11 * 1)
-let rbrb12 = (randomaku12 * 1)
+let handler = async (m, { conn, usedPrefix, owner }) => { 
+     try {
+        let __timers = (new Date - global.db.data.users[m.sender].lastberbru)
+        let _timers = (300000 - __timers) 
+        let timers = clockString(_timers)
+        
+        if (global.db.data.users[m.sender].stamina > 60) {
+        if (global.db.data.users[m.sender].healt > 50) {
+        	//////conn.berbu = conn.berbu ? conn.berbu : {}
+   ////// if (m.chat in conn.berbu) return m.reply ('Masih ada yang melakukan perburuan disini, tunggu sampai selesai!!')
+   ///// else conn.berbu[m.chat] = true
+            if (new Date - global.db.data.users[m.sender].lastberbru > 300000) {
+            let armor = global.db.data.users[m.sender].armor
+            let rubah = global.db.data.users[m.sender].rubah
+            let kuda = global.db.data.users[m.sender].kuda
+            let kucing = global.db.data.users[m.sender].kucing
+            let ____health = `${Math.floor(Math.random() * 50)}`.trim()
+            let ___health = (____health * 1)
+            let kucingnya = (kucing == 0? 0 : '' || kucing == 1 ? 5 : '' || kucing == 2 ? 10 : '' || kucing == 3 ? 15 : '' || kucing == 4 ? 21 : ''  || kucing == 5 ? 30 : '')
+            let armornya = (armor == 0 ? 0 : '' || armor == 1 ? 5 : '' || armor == 2 ? 10 : '' || armor == 3 ? 15 : '' || armor == 4 ? 21 : '' || armor == 5 ? 30 : '')
+            let __health = (___health > 60 ? ___health - kucingnya - armornya : ___health)
+            let healt = (kucing == 0 && armor == 0 ? pickRandom(['100', '99', '98', '97', '96', '95', '94', '93', '92', '91', '90']) : kucing > 0 && armor > 0 ? __health : ___health)
+            let ____stamina = `${Math.floor(Math.random() * 50)}`.trim()
+            let ___stamina = (____stamina * 1)
+            let __stamina = (___stamina > 60 ? ___stamina - kucingnya - armornya : ___stamina)
+            let stamina = (kucing == 0 && armor == 0 ? pickRandom(['100', '99', '98', '97', '96', '95', '94', '93', '92', '91', '90']) : kucing > 0 && armor > 0 ? __stamina : ___stamina)
+            ///HEWAN YG BERHASIL DIBURU\\
+          let sapi = `${Math.floor(Math.random() * 20)}`.trim() 
+        let babi = `${Math.floor(Math.random() * 15)}`.trim() 
+        let ayam = `${Math.floor(Math.random() * 25)}`.trim() 
+        let banteng = `${Math.floor(Math.random() * 30)}`.trim() 
+        let unta = `${Math.floor(Math.random() * 39)}`.trim() 
+        let keledai = `${Math.floor(Math.random() * 44)}`.trim() 
+        let domba = `${Math.floor(Math.random() * 60)}`.trim() 
+        let kambing = `${Math.floor(Math.random() * 50)}`.trim() 
+            ///m.reply(`Sedang Berburu.....`)
+           let ber = `Nyawamu yg berkurang *-${healt * 1}* Akibat Diserang hewan ataupun terjatuh
+Stamina mu juga berkurang -${stamina}
 
-zero1 = `${rbrb1}`
-zero2 = `${rbrb2}`
-zero3 = `${rbrb3}`
-zero4 = `${rbrb4}`
-zero5 = `${rbrb5}`
-zero6 = `${rbrb6}`
-zero7 = `${rbrb7}`
-zero8 = `${rbrb8}`
-zero9 = `${rbrb9}`
-zero10 = `${rbrb10}`
-zero11 = `${rbrb11}`
-zero12 = `${rbrb12}`
-
-let ber = `
-*《 Hasil Berburu Kali Ini 》*
-
- *🐂 = [ ${zero1} ]*		 	*🐃 = [ ${zero7} ]*
- *🐅 = [ ${zero2} ]*			 *🐮 = [ ${zero8} ]*
- *🐘 = [ ${zero3} ]*			 *🐒 = [ ${zero9} ]*
- *🐐 = [ ${zero4} ]*			 *🐗 = [ ${zero10} ]*
- *🐼 = [ ${zero5} ]*			 *🐖 = [ ${zero11} ]*
- *🐊 = [ ${zero6} ]*		     *🐓 = [${zero12} ]*
+_Hewan yang kamu berhasil diburu:_
+🐄Sapi: ${sapi}      🐑domba:${domba}
+🐖Babi: ${babi}      🐑Kambing ${kambing}
+🐓Ayam: ${ayam}
+🐂Banteng: ${banteng}
+🐪Unta: ${unta}
+🐪Keledai: ${keledai}
 `.trim()
-
-global.db.data.users[m.sender].banteng += rbrb1
-global.db.data.users[m.sender].harimau += rbrb2
-global.db.data.users[m.sender].gajah += rbrb3
-global.db.data.users[m.sender].kambing += rbrb4
-global.db.data.users[m.sender].panda+= rbrb5
-global.db.data.users[m.sender].buaya += rbrb6
-global.db.data.users[m.sender].kerbau += rbrb7
-global.db.data.users[m.sender].sapi += rbrb8
-global.db.data.users[m.sender].monyet += rbrb9
-global.db.data.users[m.sender].babihutan += rbrb10
-global.db.data.users[m.sender].babi += rbrb11
-global.db.data.users[m.sender].ayam += rbrb12
-
 setTimeout(() => {
-conn.send2Button( m.chat, ber, ZeusBotz, 'Again', '.berburu', 'Heal', '.heal', m)
-}, 20000) 
-               
+conn.send2Button( m.chat, ber, wm, 'Again', '.berburu', 'inventory', '.inv', m)
+}, 23000) 
+
                      setTimeout(() => {
-                     m.reply(`*DUAR*`)
+                     m.reply(`*Berhasil Menangkap hewan....*`)
+                      }, 20000)
+                      
+                      setTimeout(() => {
+                     m.reply(`*Bergerak Menangkap hewan...*`)
                       }, 18000)
-                    
-                     setTimeout(() => {
-                     m.reply('NGUING')
-                     }, 15000) 
-                    
-                     setTimeout(() => {
-                     m.reply('PIW PIW PIW')
-                     }, 14000) 
-                     
-                     setTimeout(() => {
-                     m.reply('_Sedang Berburu..._')
-                     }, 0) 
-  user.as = new Date * 1
-    } else conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage ,m )
+                      
+                      setTimeout(() => {
+                     m.reply(`*Memantau Pergerakan Hewan....*`)
+                      }, 12000)
+                      
+                      setTimeout(() => {
+                     m.reply(`*Mulai Berburu...*`)
+                      }, 0)
+                      //
+                        global.db.data.users[m.sender].healt -= healt * 1
+                        global.db.data.users[m.sender].stamina -= stamina * 1
+                        global.db.data.users[m.sender].sapi += sapi * 1
+                        global.db.data.users[m.sender].banteng += banteng * 1
+                        global.db.data.users[m.sender].ayam += ayam * 1
+                        global.db.data.users[m.sender].babi += babi * 1
+                        global.db.data.users[m.sender].lastberbru = new Date * 1
+                         } else conn.sendButton(m.chat, `Anda sudah berburu untuk kelangsungan hidup dan kelelahan silahkan coba *${timers}* lagi`, `Games Rpg Bot`, 'Go back', '.gmenu')
+               } else conn.send2Button(m.chat, `Minimal 50 health♥️ dan 60 stamina untuk bisa berburu`, wm, 'Potion', '.use potion 1','Go back Menu','.menu')
+               } else conn.send2Button(m.chat, `Minimal 60 Stamina untuk bisa berburu`, wm, 'Makan', '.makam ayamb 2','Go back Menu','.menu')
+                } catch (e) {
+        console.log(e)
+        conn.reply(m.chat, 'Error', m)
+        if (owner) {
+            let file = require.resolve(__filename)
+            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                conn.sendMessage(jid, file + ' error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+            }
+        }
+    }
 }
 handler.help = ['berburu']
 handler.tags = ['rpg']
-handler.command = /^(berburu)$/i
-handler.register = true
-
+handler.command = /^(berburu|buru)$/i 
+handler.register = false
 module.exports = handler
+//JANGAN DIUBAH YA YG DIBAWAH
+function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)]
+}
 function clockString(ms) {
   let h = Math.floor(ms / 3600000)
   let m = Math.floor(ms / 60000) % 60
