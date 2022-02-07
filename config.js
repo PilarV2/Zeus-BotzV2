@@ -21,6 +21,7 @@ global.mods = ['0'] // Want some help?
 global.prems = ['6289625556161','62896255561613'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
+  rey: 'https://server-api-rey.herokuapp.com',
   nrtm: 'https://nurutomo.herokuapp.com', 
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
