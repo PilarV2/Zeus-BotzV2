@@ -80,7 +80,7 @@ global.db.data.users[m.sender].babi += rbrb11
 global.db.data.users[m.sender].ayam += rbrb12
 
 setTimeout(() => {
-conn.send2Button( m.chat, ber, watermark, 'Again', '.berburu', 'Heal', '.heal', m)
+conn.send2Button( m.chat, ber, ZeusBotz, 'Again', '.berburu', 'Heal', '.heal', m)
 }, 20000) 
                
                      setTimeout(() => {
