@@ -12,6 +12,6 @@ let handler  = async (m, { conn, command, args, text, usedPrefix }) => {
 handler.help = ['topup <Args>']
 handler.tags = ['rpg']
 handler.command = /^topup$/i
-handler.mods = true
+handler.premium = true
 
 module.exports = handler
