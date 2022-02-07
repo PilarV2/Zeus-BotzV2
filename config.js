@@ -47,20 +47,20 @@ xteamkey = 'Dawnfrostkey'
 namaig = 'GAK ADA :)'
 namagithub = 'GAK ADA :)'
 kasihcaption = `Nih kak`
-namakontak1 = 'AlyaaXzy 1'
-namakontak2 = 'AlyaaXzy 2'
+namakontak1 = 'Pilar Owner Bot'
+namakontak2 = 'Caca Admin Bot'
 
 //kasihcaption = `Nih Kak`
 
 // Sticker WM
-global.packname = 'By AlyaaXzy' // ganti aja
-global.author = 'AlyaaXzy' // ganti aja
+global.packname = 'Zeus Botz' // ganti aja
+global.author = 'Zeus Botz' // ganti aja
 
 //yyy
-bc = 'AlyaaXzy' //AlyaaXy Broadcast
-footer = '\n©AlyaaXzy'
-namabot = 'AlyaaXzy'
-namalu = 'AlyaaXzy'
+bc = 'ZeusBotz' //ZeusBotz Broadcast
+footer = '\n© ZeusBotz'
+namabot = 'ZEUS BOTZ'
+namalu = 'PILAR'
 
 
 // 
