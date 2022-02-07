@@ -4,13 +4,13 @@ let handler = async(m, { conn }) => {
     let kontol = `Kebijakan Privasi, Syarat Ketentuan dan Peraturan Sirad BOT
 
 Kebijakan Privasi
-1. AlyaaXzy tidak akan merekam data riwayat chat user.
-2. AlyaaXzy tidak akan menyebarkan nomor users.
-3. AlyaaXzy tidak akan menyimpan media yang dikirimkan oleh users.
-4. AlyaaXzy tidak akan menyalah gunakan data data users.
-5. Owner AlyaaXzy berhak melihat data riwayat chat users.
-6. Owner AlyaaXzy berhak melihat status users.
-7. Owner AlyaaXzy dapat melihat riwayat chat, dan media yang dikirimkan users.
+1. BOT tidak akan merekam data riwayat chat user.
+2. BOT tidak akan menyebarkan nomor users.
+3. BOT tidak akan menyimpan media yang dikirimkan oleh users.
+4. BOT tidak akan menyalah gunakan data data users.
+5. Owner BOT berhak melihat data riwayat chat users.
+6. Owner BOT berhak melihat status users.
+7. Owner BOT dapat melihat riwayat chat, dan media yang dikirimkan users.
 
 Peraturan Sirad Bot
 1. Users dilarang menelpon maupun memvideo call nomor bot.
@@ -21,10 +21,10 @@ Peraturan Sirad Bot
 
 Syarat Ketentuan Sirad Bot
 1. Bot akan keluar dari group apabila sudah waktunya keluar.
-2. AlyaaXzy dapat mem-ban users secara sepihak terlepas dari users salah atau tidak.
-3. AlyaaXzy *tidak akan bertanggungjawab atas apapun yang users lakukan terhadap fitur bot.*
-4. AlyaaXzy akan memberlakukan hukuman: block atau ban terhadap users yang melanggar peraturan.
-5. AlyaaXzy bertanggung jawab atas kesalahan fatal dalam programing maupun owner.
+2. Owner BOT dapat mem-ban users secara sepihak terlepas dari users salah atau tidak.
+3. Owner BOT *tidak akan bertanggungjawab atas apapun yang users lakukan terhadap fitur bot.*
+4. Owner BOT akan memberlakukan hukuman: block atau ban terhadap users yang melanggar peraturan.
+5. Owner BOT bertanggung jawab atas kesalahan fatal dalam programing maupun owner.
 
 SC : Tq
 -Raditya
