@@ -26,13 +26,13 @@ module.exports = {
         let user = global.db.data.users[m.sender]
         if (typeof user !== 'object') global.db.data.users[m.sender] = {}
         if (user) {
-            if (!isNumber(user.healt)) user.healt = 0
+            if (!isNumber(user.healt)) user.healt = 100
             if (!isNumber(user.level)) user.level = 0
-            if (!isNumber(user.exp)) user.exp = 0
+            if (!isNumber(user.exp)) user.exp = 10
             if (!isNumber(user.title)) user.title = ''
-            if (!isNumber(user.limit)) user.limit = 50
+            if (!isNumber(user.limit)) user.limit = 15
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
-            if (!isNumber(user.money)) user.money = 0
+            if (!isNumber(user.money)) user.money = 1000
             
             if (!isNumber(user.diamond)) user.diamond = 0
             if (!isNumber(user.iron)) user.iron = 0
@@ -115,10 +115,10 @@ module.exports = {
             healt: 100,
             level: 0,
             title: '',
-            exp: 0,
-            limit: 50,
+            exp: 10,
+            limit: 15,
             lastclaim: 0,
-            money: 0,
+            money: 1000,
             diamond: 0,
             iron: 0,
             common: 0,
