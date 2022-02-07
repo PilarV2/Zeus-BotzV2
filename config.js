@@ -61,7 +61,7 @@ bc = 'ZeusBotz' //ZeusBotz Broadcast
 footer = '\n© ZeusBotz'
 namabot = 'ZEUS BOTZ'
 namalu = 'PILAR'
-watermark = 'ZeusBotz'
+watermark = 'ZeusBotz' //ganti aja
 
 // 
 wait = '_*Tunggu Sebentar...*_'
@@ -73,7 +73,7 @@ global.eror = '_*Server Error*_'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23101820&text='
 
 // Ubah saja SC dari AlyaaXzy
-global.image = 'https://telegra.ph/file/b244bd9c1cf0bddd6d0e2.png'//thumbnail
+global.image = 'https://telegra.ph/file/f96eee5c2c75bd32c1f58.png'//thumbnail
 
 // tingkat kesulitan, semakin tinggi semakin susah
 global.multiplier = 40 // The higher, The harder levelup
