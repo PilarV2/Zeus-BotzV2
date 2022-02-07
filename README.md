@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://ibb.co/QQX130c"><img src="https://i.ibb.co/tK3WTRh/FB-IMG-1619342660961.jpg" alt="Velgrynd"></a>
+  <a href="https://ibb.co/QQX130c"><img src="https://telegra.ph/file/f96eee5c2c75bd32c1f58.png" alt="Velgrynd"></a>
 </p>
 
 <p align="left">
