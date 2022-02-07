@@ -15,10 +15,10 @@ gc1 = ''
 gc2 = ''
 gc3 = ''
 global.linkGC = ['https://chat.whatsapp.com/HJ9pD2XJ8vq7whuAYOvT1Y', ''] // ganti jadi group lu
-global.owner = ['+1 (775) 403-5736','6289505165400'] // Put your number here //owner eval
-global.kontak = ['+1 (775) 403-5736','6289505165400'] //Ketika ada yang ngetik #owner
+global.owner = ['6289625556161','62896255561613'] // Put your number here //owner eval
+global.kontak = ['6289625556161','62896255561613'] //Ketika ada yang ngetik #owner
 global.mods = ['0'] // Want some help?
-global.prems = ['+1 (775) 403-5736','6289505165400','6282287750102'] // Premium user has unlimited limit
+global.prems = ['6289625556161','62896255561613'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com', 
@@ -61,7 +61,7 @@ bc = 'ZeusBotz' //ZeusBotz Broadcast
 footer = '\n© ZeusBotz'
 namabot = 'ZEUS BOTZ'
 namalu = 'PILAR'
-
+watermark = 'ZeusBotz'
 
 // 
 wait = '_*Tunggu Sebentar...*_'
@@ -73,7 +73,7 @@ global.eror = '_*Server Error*_'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23101820&text='
 
 // Ubah saja SC dari AlyaaXzy
-global.image = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23101820&text=Zeus%20Botz'//thumbnail
+global.image = 'https://telegra.ph/file/b244bd9c1cf0bddd6d0e2.png'//thumbnail
 
 // tingkat kesulitan, semakin tinggi semakin susah
 global.multiplier = 40 // The higher, The harder levelup
