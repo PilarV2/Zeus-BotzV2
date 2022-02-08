@@ -1,24 +1,41 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn }) => {
-	conn.send2ButtonLoc(m.chat, await (await fetch(fla + 'sewa bot')).buffer(), `╠═〘 Beli Bot 〙 ═
-╠➥ *1 Minggu* :     *Rp 15000*
-╠➥ *1 Bulan* :      *Rp 20000*
-╠➥ *2 Bulan* :      *Rp 30000*
-╠➥ *Permanen* : *Rp 40000*
-╠➥ *Owner* :   *Rp 30000*/bln
-╠➥ *Nomer Dana & pulsa* : 
-║    089625556161
-╠═〘 PEMBAYARAN 〙 ═
-╠➥ Dana Dan Pulsa
-║
-╠═ Tertarik Untuk Beli Bot Ini?
-╠➥Ketuk Tombol Di Bawah Ya
-║
-╠═ ©2021 Rpg wabot-aq
-╠═ Scrip original by Nurutomo
-╠═〘 Zeus Botz 〙 ═`.trim(), Zeus Botz, 'Dana', '#viadana', 'Pulsa', '#viapulsa', m)
+	conn.send2ButtonLoc(m.chat, await (await fetch(fla + 'sewa bot')).buffer(), `╭═══ *〘 SEWA 〙*
+║ ┅ ๑————————————๑
+║┊ ⌲ Sewa = _5k/grup (1 minggu)_
+║┊ ⌲ Sewa = _15k/grup (1 bulan)_
+║┊ ⌲ Sewa = _20k/grup (2 bulan)_
+║┊ ⌲ Sewa = _35k/grup (8 bulan)_                                                                      ║┊ ⌲ Sewa = _45k/grup (12 bulan)_
+╰═ ┅ ═══════
+╭═══ *〘 BELI PREMIUM 〙*
+║ ┅ ๑————————————๑
+║┊ ⌲ Premium = _10k/minggu_
+║┊ ⌲ Premium = _35k/bulan_
+║┊ ⌲ Premium = _46k/permanen
+║┊ ⌲ Jadi Owner = _75k/permanen
+╰═ ┅ ═══════
+
+༅ _*KEUNTUNGAN SEWABOT*_
+
+✧ *Bot akan masuk gc*
+✧ *Bisa Menyuruh Bot Buka/Tutup Group*
+✧ *Kick Orang*
+✧ *Add Orang*
+✧ *Anti Link On*
+✧ *Bisa Memasukkan Bot Ke dalam Grup*
+
+*[❗] Jika Group Sepi 2 minggu, bot akan leave*
+
+◪ *Jika Minat Hubungi owner kami*
+◪ *Atau Masuk Group Official Bot*
+_https://chat.whatsapp.com/HJ9pD2XJ8vq7whuAYOvT1Y_
+
+▌│█║▌║▌║║▌║▌║█│▌
+`.trim(), `ZeusBotz`, 'Payment', '#payment', 'Owner', '#owner', m)
 }
 
-handler.command = /^sewabot$/i
+handler.help = ['sewa', 'sewabot']
+handler.tags = ['main']
+handler.command = /^sewa(bot)?$/i
 
 module.exports = handler
