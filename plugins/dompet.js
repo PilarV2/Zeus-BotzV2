@@ -53,10 +53,16 @@ let handler = async (m, { conn, usedPrefix }) => {
     let usersmythic = sortedmythic.map(v => v[0])
     let userslegendary = sortedlegendary.map(v => v[0])
     let str = `
-Wallet *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
+Wallet %name
 
-🏷️Title: *${title}*\n
+💌Title: *${title}*\n
 ❤️Health: *${healt}*
+🔖Limit: *${limit}*
+💊Potion: *${potion}*
+📦Uncommon: *${uncommon*
+📦Common: *${common}
+🎁Legendary: *${legendary}
+🎁Mythic: *${mythic}
 💳Role: *${role}*
 💰Money: *${money}*
 
