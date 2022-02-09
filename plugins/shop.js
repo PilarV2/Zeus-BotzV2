@@ -3,7 +3,7 @@ const potion = 500
 const Spotion = 150 
 const Bdiamond = 9000
 const Sdiamond = 7500
-const Blimit = 1000
+const Blimit = 1500
 const Bcommon = 7000
 const Scommon = 4000
 const Suncommon = 6000
@@ -36,7 +36,7 @@ Contoh penggunaan: *${usedPrefix}shop buy potion 1*
 *${usedPrefix}shop upgrade fishingrod* \n\n
 List Barang:\n\n
 *Barang   |  Harga beli*\n
-5 Limit :.        ${Blimit}
+Limit :.        ${Blimit}
 Potion:       ${potion}
 Diamond:     ${Bdiamond}
 Common:     ${Bcommon}
@@ -72,7 +72,7 @@ Contoh penggunaan: *${usedPrefix + command} buy potion 1*
 
 *Barang   |  Harga beli*
 
-5 Limit :            ${Blimit}
+Limit :            ${Blimit}
 🧃Potion:          ${potion}
 💎Diamond:      ${Bdiamond}
 ⛓️Iron:               ${Biron}
