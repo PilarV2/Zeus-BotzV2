@@ -209,6 +209,11 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
 ┌〔 DAFTAR MENU 〕─•
 ┏━━〔 Status 〕━
 ┃❏ Aktif selama ${uptime}
+┃❏ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
+┃❏ *${totaljadibot.length}* Jadibot
+┃❏ *${conn.blocklist.length}* Terblock
+┃❏ *${Object.keys(global.db.data.users).length}* Pengguna
+┃❏ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 ├❏ ${_p + command} all
 ├❏ ${_p + command} game
 ├❏ ${_p + command} rpg 
