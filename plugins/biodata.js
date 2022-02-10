@@ -2,7 +2,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 let fetch = require('node-fetch')
 let fs = require('fs')
 let handler = async (m, { conn, text }) => {
-let logo = 
+let logo = fs.readFileSync(`./src/img2.png`)
   let ext= `
 *───────[ BIODATA OWNER ]───────*
 *💌 Nama* : PilarTod
