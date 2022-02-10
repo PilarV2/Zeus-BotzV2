@@ -626,7 +626,7 @@ END:VCARD
 `.trim()
     }]
   }, MessageType.contactsArray, { quoted: m })
-m.reply('Ada Perlu apa kak nyari Owner??')
+conn.send2Button(m.chat, `ITU KAK OWNER KU >_<`, `Zeus Botz`, `SEWA`, `.sewa`, `INFO OWNER`, `.ownerinfo`, m)
 }
 handler.help = ['owner', 'creator']
 handler.tags = ['info']
@@ -634,3 +634,5 @@ handler.tags = ['info']
 handler.command = /^(owner)$/i
 
 module.exports = handler
+
+let wm = global.botwm
