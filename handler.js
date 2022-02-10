@@ -93,7 +93,21 @@ module.exports = {
             if (!isNumber(user.udang)) user.udang = 0
             if (!isNumber(user.ikan)) user.ikan = 0
             if (!isNumber(user.orca)) user.orca = 0
-
+            if (!isNumber(user.apel)) user.apel = 0
+            if (!isNumber(user.anggur)) user.anggur = 0
+            if (!isNumber(user.jeruk)) user.jeruk = 0
+            if (!isNumber(user.semangka)) user.semangka = 0
+            if (!isNumber(user.mangga)) user.mangga = 0
+            if (!isNumber(user.stroberi)) user.stroberi = 0
+            if (!isNumber(user.pisang)) user.pisang = 0
+            if (!isNumber(user.kayu)) user.kayu = 0
+            if (!isNumber(user.emas)) user.emas = 0
+            if (!isNumber(user.makanan)) user.makanan = 0
+            if (!isNumber(user.bibitanggur)) user.bibitanggur = 0
+            if (!isNumber(user.bibitpisang)) user.bibitpisang = 0
+            if (!isNumber(user.bibitapel)) user.bibitapel = 0
+            if (!isNumber(user.bibitmangga)) user.bibitmangga = 0
+            if (!isNumber(user.bibitjeruk)) user.bibitjeruk = 0
             if (!isNumber(user.lastadventure)) user.lastadventure = 0
             if (!isNumber(user.lastfishing)) user.lastfishing = 0
             if (!isNumber(user.lastgetmoney)) user.lastgetmoney = 0
@@ -101,7 +115,10 @@ module.exports = {
             if (!isNumber(user.lastmining)) user.lastmining = 0
             if (!isNumber(user.lasthunt)) user.lasthunt = 0
             if (!isNumber(user.lastweekly)) user.lastweekly = 0
-            if (!isNumber(user.lastmonthly)) user.lastmontly = 0
+            if (!isNumber(user.lastmonthly)) user.lastmonthly = 0
+            if (!isNumber(user.lastngocok)) user.lastngocok = 0
+             if (!isNumber(user.lastberkebon)) user.lastberkebon = 0
+            if (!isNumber(user.lastcodereg)) user.lastcodereg = 0
             if (!('registered' in user)) user.registered = false
             if (!user.registered) {
                 if (!('name' in user)) user.name = this.getName(m.sender)
@@ -143,6 +160,17 @@ module.exports = {
             udang: 0,
             ikan: 0,
             orca: 0,
+            apel: 20,
+            mangga: 0,
+            stroberi: 0,
+            semangka: 0,
+            jeruk: 0,
+            semangka: 0,
+            bibitanggur: 0,
+            bibitjeruk: 0,
+            bibitapel: 0,
+            bibitpisang: 0,
+            bibitmangga: 0,
             kucinglastclaim: 0,
             kuda: 0,
             kudalastclaim: 0,
@@ -173,11 +201,14 @@ module.exports = {
             lastadventure: 0,
             lastfishing: 0,
             lastgetmoney: 0,
+            lastngocok: 0,
             lastduel: 0,
             lastmining: 0,
             lasthunt: 0,
             lastweekly: 0,
             lastmonthly: 0,
+            lastcodereg: 0,
+            lastberkebon: 0,
             registered: false,
             name: this.getName(m.sender),
             age: -1,
