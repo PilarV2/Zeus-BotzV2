@@ -2,16 +2,16 @@ const { MessageType } = require('@adiwajshing/baileys')
 let fetch = require('node-fetch')
 let fs = require('fs')
 let handler = async (m, { conn, text }) => {
-let logo = global.logoowner
+let logo = 
   let ext= `
 *───────[ BIODATA OWNER ]───────*
-*💌 Nama* : Letta
-*🎨 Umur* : 11
-*🧮 Kelas* : 6
-*📈 Status* : Busy
+*💌 Nama* : PilarTod
+*🎨 Umur* : 14
+*🧮 Kelas* : 8
+*📈 Status* : Pelajar :v
 
 *───────[ SOSIAL MEDIA ]───────*
-*📷 instagran* : @ppiowy_
+*📷 instagran* : @notpilar_
 *🇫  Facebook* : none
 *🏮 Chanel Youtube* : none
 `
@@ -19,7 +19,7 @@ let name = await conn.getName(m.sender)
 
 let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
 
-  sumberImg = fs.readFileSync(`./src/owner.jpg`)
+  sumberImg = fs.readFileSync(`./src/img1.png`)
   image = (await conn.prepareMessage('0@s.whatsapp.net', sumberImg, MessageType.image, { thumbnail: Buffer.alloc(0) })).message.imageMessage
   res = await conn.prepareMessageFromContent(m.chat, {
     "productMessage": {
@@ -33,7 +33,7 @@ let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ?
         "descriptionCount": "999999999",
         "productImageCount": "1",
       },
-      "businessOwnerJid": "62831433937633@s.whatsapp.net",
+      "businessOwnerJid": "62896255561617@s.whatsapp.net",
       "contextInfo": {
         "forwardingScore": 9999,
         "isForwarded": false
@@ -44,9 +44,9 @@ let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ?
   conn.relayWAMessage(res)
 
 }
-handler.help = ['owner', 'creator']
+handler.help = ['ownerinfo']
 handler.tags = ['info']
-handler.command = /^(owner|creator)$/i
+handler.command = /^(ownerinfo)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
