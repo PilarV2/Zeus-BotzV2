@@ -3,28 +3,36 @@ let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn }) => {
     let wm = global.botwm
     let user = global.db.data.users[m.sender]
-    let _timers = (604800000 - (new Date - user.lastweekly))
+    let __timers = (new Date - user.lastclaim)
+    let _timers = (86400000 - __timers)
     let timers = clockString(_timers) 
-    if (new Date - user.lastweekly > 604800000) {
-    let str = `+20000 money 💹\n+10 Legendary crate 🧰\n+15 String 🕸️\n+20 Iron ⛓️\n+10 Gold 🪙`
-        conn.send2Button(m.chat, str, wm, 'Claim', '.claim', 'Monthly', '.monthly',m)
+    if (new Date - user.lastclaim > 86400000) {
+    let str = `+5000 money 💹\n+5 potion 🥤\n+3 Kayu 🪵`
+        conn.send2Button(m.chat, str, wm, 'Weekly', '.weekly', 'Monthly', '.monthly', m)
         conn.reply(str)
-        user.money += 200000
-        user.legendary += 10
-        user.iron += 20
-        user.emas += 10
-        user.string += 15
-        user.lastweekly= new Date * 1
+        global.db.data.users[m.sender].money += 5000
+        global.db.data.users[m.sender].kayu += 3
+        global.db.data.users[m.sender].potion += 5
+        global.db.data.users[m.sender].lastclaim = new Date * 1
     } else {
-        let buttons = button(`silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`, user)
+        let buttons = button(`silahkan tunggu *⏱️${timers}* lagi untuk bisa mengclaim lagi`, user)
         conn.sendMessage(m.chat, buttons, MessageType.buttonsMessage, { quoted: m })
     }
 }
-handler.help = ['weekly']
+handler.help = ['claim']
 handler.tags = ['rpg']
-handler.command = /^(weekly)$/i
+handler.command = /^(claim|daily)$/i
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
 
 handler.fail = null
+handler.money = 0
 
 module.exports = handler
 
