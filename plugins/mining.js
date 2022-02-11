@@ -51,9 +51,9 @@ Akhirnya Kamu Mendapatkan :
                      m.reply('_Sedang Mencari Goa..._')
                      }, 0) 
                      
-            } else m.reply(`Anda kelelahan dan Mager untuk mining, Silahkan tunggu ${waktur} lagi untuk mining!!`)
+            } else conn.sendButton( m.chat, `Tunggu 🕓${waktur} lagi, untuk menambang`, `${wm}`, `⋮☰ Back`, `.menu all`, m)
          } else m.reply(`Pickaxe kamu akan hancur segera upgrade!`)
-     } else m.reply(`Kamu Belum Mempunyai Pickaxe, Segera beli dengan ketik #buy pickaxe !!`)
+     } else conn.sendButton( m.chat, `Kamu Tidak Mempunyai *⛏️Pickaxe* untuk menambang, Beli Pickaxe Terlebih Dahulu`, `${wm}`, `Buy Pickaxe`, `.buy pickaxe 1`,m )
  }
 
 handler.help = ['mining']
@@ -74,3 +74,5 @@ function clockString(ms) {
 function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)]
 }
+
+let wm = global.botwm
