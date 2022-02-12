@@ -30,7 +30,7 @@ module.exports = {
             if (!isNumber(user.level)) user.level = 0
             if (!isNumber(user.exp)) user.exp = 10
             if (!isNumber(user.title)) user.title = ''
-            if (!isNumber(user.atm)) user.atm = 0
+            if (!isNumber(user.atm)) user.atm = 5000
             if (!isNumber(user.korbanngocok)) user.korbanngocok = 0
             if (!isNumber(user.limit)) user.limit = 15
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -155,7 +155,7 @@ module.exports = {
             healt: 100,
             level: 0,
             title: '',
-            atm: 0,
+            atm: 5000,
             exp: 10,
             limit: 15,
             lastclaim: 0,
