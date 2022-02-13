@@ -1,6 +1,6 @@
 let levelling = require('../lib/levelling')
 let fetch = require('node-fetch')
-let PhoneNumber = require('awesome-phonenumber')
+//let PhoneNumber = require('awesome-phonenumber')
 let handler = async (m, { conn, usedPrefix, text }) => {
 let date = global.botdate
     let { registered, age, lastrampok, lastdagang, lastcodereg, lastberkebon, lasthourly, lastberburu, lastbansos, lastadventure, lastfishing, lastwar, lastduel, lastmining, lastdungeon, lastclaim, lastweekly, lastmonthly } = global.db.data.users[m.sender]
