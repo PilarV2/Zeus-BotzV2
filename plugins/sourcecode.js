@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => conn.sendButtonLoc(m.chat, await (await fet
 *────────「 SCRIPT 」 ────────*
 > Script Ori = https://github.com/AlyaaXd/rfkbot
 
-> Script Recode By Pilar = https:/github.com/PilarV2/Zeus-BotzV2
+> Script Recode By Pilar = https://github.com/PilarV2/Zeus-BotzV2
 
 `.trim(), '© ZeusBotz', 'Thanks', '.tqto')
 handler.help = ['sourcecode']
