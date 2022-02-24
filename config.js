@@ -79,7 +79,7 @@ global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=tr
 global.image = 'https://telegra.ph/file/f96eee5c2c75bd32c1f58.png'//thumbnail
 
 // tingkat kesulitan, semakin tinggi semakin susah
-global.multiplier = 40 // The higher, The harder levelup
+global.multiplier = 250 // The higher, The harder levelup
 
 //*****************PEMBATAS*********************
 // JANGAN DI GANTI NTAR KLO GABISA JAN TANYA GW
