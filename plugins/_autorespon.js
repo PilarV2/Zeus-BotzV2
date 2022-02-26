@@ -42,15 +42,7 @@ handler.all = async function (m, { isBlocked }) {
 ║
 ╠═ ©2021 Rpg wabot-aq
 ╠═ Scrip original by Nurutomo
-╠═〘 RAD BOT〙 ═`.trim(), '©RadBotZ', 'Dana', '#viadana', 'Pulsa', '#viapulsa', m)
-}
-
-    // salam
-    let reg = /(ass?alam|اَلسَّلاَمُ عَلَيْكُمْ|السلام عليکم)/i
-    let isSalam = reg.exec(m.text)
-    if (isSalam && !m.fromMe) {
-        m.reply(`وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n_wa\'alaikumussalam wr.wb._`)
-    }
+╠═〘 RAD BOT〙 ═`.trim(), '©RadBotZ', 'Dana', '#viadana', 'Pulsa', '#viapulsa', m
 
     // backup db
     if (setting.backup) {
