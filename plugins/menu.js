@@ -6,66 +6,61 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-╭───────────────
-│    *${ucapan()} %name!*
-┠─────═[ *USER INFO* ]═─────⋆
-│▸ *Name:* %name
-│▸ *Premium:* 404
-│▸ *Limit:* %limit
-│▸ *Role:* %role
-│▸ *Xp:* %exp / %maxexp
-│▸ *Total Xp:* %totalexp
-┠─────═[ *TODAY* ]═─────⋆
-│▸ Tanggal: *%week %weton, %date*
-│▸ Tanggal Islam: *%dateIslamic*
-│▸ Waktu: *%time*
-┠─────═[ *BOT INFO* ]═─────⋆
-│▸ *Name:* %me
-│▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
-│▸ *Memory Used* : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
-│▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-│▸ *Uptime:* %uptime (%muptime)
-│▸ *Database:* %rtotalreg dari %totalreg
-╰────────────────
+╭〔 ZeusBotz 〕
+├ Hai, *%name!*
+├ Limit: *%limit*
+├ Role: *%role*
+├ Xp: *%exp / %maxexp*
+├ Total Xp: *%totalexp*
+╰───
+╭━━•›ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙‹•━━╮
+├ Mode: *${global.opts['self'] ? 'Private' : 'Publik'}*
+├ Runtime: *%uptime (%muptime)*
+├ Database: *%rtotalreg dari %totalreg*
+├ Memory Used : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
+└─────────────────
 %readmore`.trimStart(),
-  header: '┌─〔 %category 〕─•',
-  body: '├◌ ⃝✧⪼ %cmd %islimit %isPremium',
-  footer: '└────•\n',
+  header: `
+⁙╭━━•›ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙‹•━━╮
+⁙┃╭┈─────────────⩵꙰ཱི࿐
+⁙┃╰─── %category ───➤ ↶↷*
+⁙├☆─〔 ZeusBotz 〕──➤`,
+  body: `⁙├〲 %cmd %islimit %isPremium`,
+  footer: '⁙╰•☆°°°🕊°°°🕊°°°🕊°°°‹•━━╮',
   after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn.state !== 'close').map(conn => conn.user)])]
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'rpg', 'game', 'jadian', 'xp', 'stiker', 'kerangajaib', 'photo', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'edukasi', 'news', 'nsfw', 'xp', 'stiker', 'image', 'cristian', 'anime', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'vote', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
     'game': 'Game',
-    'rpg': 'Rpg',
-    'jadian': 'Jadian',
     'xp': 'Exp & Limit',
+    'nsfw': `NSFW ${global.opts['nsfw'] ? '' : '(Dinonaktifkan)'}`,
     'sticker': 'Stiker',
+    'edukasi': 'Edukasi',
+    'news': 'News',
     'kerang': 'Kerang Ajaib',
-    'ep': 'Ephoto',
-    'ph': 'Photooxy',
     'quotes': 'Quotes',
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
     'group': 'Grup',
+    'anime': 'Anime',
     'premium': 'Premium',
     'internet': 'Internet',
+    'image': 'Random Image',
     'anonymous': 'Anonymous Chat',
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
+    'cristian': 'cristian',
     'fun': 'Fun',
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
-    'quran': 'Al Qur\'an',
+    'quran': 'Islam',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
@@ -74,14 +69,18 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
   if (teks == 'game') tags = {
     'game': 'Game'
   }
-  if (teks == 'rpg') tags = {
-    'rpg': 'Rpg'
-  }
-  if (teks == 'jadian') tags = {
-    'jadian': 'Jadian'
-  }
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
+  }
+  if (teks == 'news') tags = {
+    'news': 'News'
+  }
+  if (teks == 'edukasi') tags = {
+    'edukasi': 'Edukasi'
+  }
+  if (teks == 'nsfw') tags = {
+    'hentai': 'Hentai',
+    'bokep': 'Bokep'
   }
   if (teks == 'stiker') tags = {
     'sticker': 'Stiker'
@@ -89,12 +88,11 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
   }
-  if (teks == 'photo') tags = {
-    'ephoto': 'Ephoto',
-    'photooxy': 'Photooxy'
-  }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
+  }
+  if (teks == 'cristian') tags = {
+    'cristian': 'Cristian'
   }
   if (teks == 'admin') tags = {
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`
@@ -107,6 +105,9 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
   }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
+  }
+  if (teks == 'image') tags = {
+    'image': 'Random Image'
   }
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
@@ -130,8 +131,11 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
     'vote': 'Voting',
     'absen': 'Absen'
   }
+    if (teks == 'anime') tags = {
+    'anime': 'Anime'
+  }
   if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
+    'quran': 'Islam'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
@@ -155,7 +159,9 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
 
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
+    let { exp, premium, limit, level, role, registered } = global.db.data.users[m.sender]
+    let premium = global.db.data.users[m.sender].premium
+   let premium = `${prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Ya' : 'Tidak'}`
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -191,6 +197,7 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
       }) * 1000
     }
     let muptime = clockString(_muptime)
+    let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn.state !== 'close').map(conn => conn.user)])]
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
@@ -205,19 +212,17 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
       }
     })
     if (teks == '404') {
-    throw ` 
-┌〔 DAFTAR MENU 〕─•
-┏━━〔 Status 〕━
-┃❏ Aktif selama ${uptime}
-┃❏ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-┃❏ *${totaljadibot.length}* Jadibot
-┃❏ *${conn.blocklist.length}* Terblock
-┃❏ *${Object.keys(global.db.data.users).length}* Pengguna
-┃❏ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+			throw` *${ucapan()}, ${conn.getName(m.sender)} !*
+${readMore}
+*┌〔 𝗗𝗔𝗙𝗧𝗔𝗥 𝗠𝗘𝗡𝗨 〕─•*
+*├❏ Aktif selama ${uptime}*
+*├❏ ${Object.keys(global.db.data.users).length} Pengguna*
+*├❏ ${totaljadibot.length} Jadibot*
+*├❏ ${conn.blocklist.length} Terblock*
+*├❏ ${Object.entries(global.db.data.users).filter(user => user[1].banned).length} Pengguna Terbanned*
+*├❏ ${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length} Chat Terbanned*
 ├❏ ${_p + command} all
 ├❏ ${_p + command} game
-├❏ ${_p + command} rpg 
-├❏ ${_p + command} jadian
 ├❏ ${_p + command} xp
 ├❏ ${_p + command} stiker
 ├❏ ${_p + command} kerangajaib
@@ -292,21 +297,20 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), footer, 'OWNER', '.owner', 'DONASI', '.donasi', 'RULES', '.rules', m)
+    await conn.send2ButtonLoc(m.chat, await(await fetch(fla + teks)).buffer(), text.trim(), `Runtime : ${uptime}\n${week} ${date}`, 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
   } catch (e) {
-    //conn.reply(m.chat, 'Maaf, menu sedang error', m)
+  //conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(m|menu|help|\?)$/i
+handler.command = /^(menu|help|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-handler.register = false
 
 handler.admin = false
 handler.botAdmin = false
@@ -316,8 +320,8 @@ handler.exp = 3
 
 module.exports = handler
 
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
+const more = String.fromCharCode(1)
+const readMore = more.repeat(1)
 
 function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
@@ -327,18 +331,18 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Selamat dinihari"
+  res = "Selamat dinihari🌌"
   if (time >= 4) {
-    res = "Selamat pagi"
+    res = "Selamat pagi🌅"
   }
   if (time > 10) {
-    res = "Selamat siang"
+    res = "Selamat siang🏙️"
   }
   if (time >= 15) {
-    res = "Selamat sore"
+    res = "Selamat sore🌇"
   }
   if (time >= 18) {
-    res = "Selamat malam"
+    res = "Selamat malam🌃"
   }
   return res
 }
