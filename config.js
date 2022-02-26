@@ -18,7 +18,7 @@ global.linkGC = ['https://chat.whatsapp.com/HJ9pD2XJ8vq7whuAYOvT1Y', ''] // gant
 global.owner = ['6289625556161','62896255561613'] // Put your number here //owner eval
 global.kontak = ['6289625556161','62896255561613'] //Ketika ada yang ngetik #owner
 global.mods = ['0'] // Want some help?
-global.prems = ['6289625556161','601164215501'] // Premium user has unlimited limit
+global.prems = ['6289625556161','601164215501','60166408295'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   rey: 'https://server-api-rey.herokuapp.com',
