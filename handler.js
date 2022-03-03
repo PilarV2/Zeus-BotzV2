@@ -1,4 +1,5 @@
 let util = require('util')
+let fetch = require('node-fetch')
 let simple = require('./lib/simple')
 let { MessageType } = require('@adiwajshing/baileys')
 
@@ -577,17 +578,22 @@ module.exports = {
     switch (action) {
       case 'add':
       case 'remove':
-        if (chat.welcome) {
+          if (chat.welcome) {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
-            let pp = './src/avatar_contact.png'
+            //let pp = './src/avatar_contact.png'
             try {
               pp = await this.getProfilePicture(user)
             } catch (e) {
             } finally {
               text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendFile(jid, pp, 'pp.jpg', text, null, false, {
+              let wm = global.botwm
+              let wel = await (await fetch(fla + `WELCOME`)).buffer()
+
+              let lea = await (await fetch(fla + `GOOD BYE`)).buffer()
+
+              conn.send2ButtonLoc(jid, action === 'add' ? wel : lea, text, action === 'add' ? '*WELCOME TO GROUP ✨*' : '*YEY NASI KOTAK 😈*', '⋮☰ Menu', '#menu', 'Info Grup', '.infogc', false, {
                 contextInfo: {
                   mentionedJid: [user]
                 }
@@ -646,15 +652,15 @@ Untuk mematikan fitur ini, ketik
 global.dfail = (type, m, conn) => {
 	let name = conn.getName(m.sender)
   let msg = {
-    rowner: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    owner: `❌⚠️Perintah ditolak⚠️❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    mods: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    premium: '❌Perintah Ini khusus pengguna _*Premium*_ !',
+    rowner: `❌ ACCESS DENIED`,
+    owner: `❌ ACCESS DENIED Khusus Owner Tod`,
+    mods: `❌ ACCESS DENIED Khusus Moderator`,
+    premium: '❌ ACCESS DENIED Khusus Premium',
     group: 'Perintah ini hanya dapat digunakan di grup!',
     private: '❌Perintah ditolak❌\n\nGunakan Perintah ini di Chat Pribadi bot',
     admin: 'Perintah ini hanya untuk *Admin* grup!',
     nsfw: `Perintah ini hanya bisa diaktifkan oleh @${global.kontak[0].split`@`[0]}`,
-    botAdmin: 'Jadikan Bot sebagai admin untuk menggunakan perintah ini\n\nDenger ya dekkk!!!\nApakah orang yang tidak menjadi admin bisa menambahkan member???!!!!!',
+    botAdmin: 'Mikir Bg Bot Nya Bukan Atmin :(',
     unreg: `Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar nama.16*`
   }[type]
   if (msg) return m.reply(msg)
