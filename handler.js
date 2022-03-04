@@ -29,7 +29,7 @@ module.exports = {
         if (user) {
             if (!isNumber(user.healt)) user.healt = 100
             if (!isNumber(user.level)) user.level = 0
-            if (!isNumber(user.exp)) user.exp = 10
+            if (!isNumber(user.exp)) user.exp = 1
             if (!isNumber(user.title)) user.title = ''
             if (!isNumber(user.atm)) user.atm = 5000
             if (!isNumber(user.korbanngocok)) user.korbanngocok = 0
